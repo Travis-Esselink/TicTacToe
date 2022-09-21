@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+    
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    /* background-image: url(images/parch2.jpeg);
+    background-repeat: no-repeat;
+    background: cover; */
+    
+    
+}
+
+
+.container {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+
+    
+    
+}
+
+.heading {
+}
+
+h2 {
+    display: block
+}
+
+
+.grid-div {
+    width: 800px;
+    height: 800px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    border: 1px solid black;
+}
+
+.cell {
+    border: 1px solid black;
+    font-size: 70px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    background: 
+    
+}
+
+.cell:hover {
+    opacity: 0.5;
+}

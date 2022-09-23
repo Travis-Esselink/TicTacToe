@@ -1,37 +1,43 @@
 
+
 // define global variables
 const cells = document.querySelectorAll('.cell')
 const restartBtn = document.querySelector('#restartBtn')
 const statusText = document.querySelector('#statusText')
+const braceImg = '<img src = "images/bracePic.png">'
+const wheelImg = '<img src = "images/wheelPic.png">'
 
 const winConditions = [
     [0, 1, 2],
     [3, 4, 5],
     [6, 7, 8],
     [0, 3, 6],
-    [1, 4, 7],
+    [1, 4 ,7],
     [2, 5, 8],
     [0, 4, 8],
     [6, 4, 2]
 ]
 
-let options = ['', '', '', '', '', '', '', '', '',]
-let currentPlayer = 'X'
+let options = ['', '', '', '', '', '', '', '', '', ]
 let running = false
+let currentPlayer = 'X'
+let currentPlayerPic = braceImg
 
 // put game in playable state by starting initialize game function
 initializeGame()
 
+
 // function to initialize game, add click events to cells and restart button, set default status text
-function initializeGame() {
-    cells.forEach(cell => cell.addEventListener('click', cellClicked))
-    statusText.textContent = `It is ${currentPlayer}'s turn`
-    restartBtn.addEventListener('click', restartGame)
+
+function initializeGame () {
     running = true
+    cells.forEach(cell => cell.addEventListener('click', cellClicked))
+    restartBtn.addEventListener('click', restartGame)
+    statusText.textContent = `It is ${currentPlayer}'s turn`
 }
 
 // function to run the updateCell function, and check if a winner exists when a cell is clicked
-function cellClicked() {
+function cellClicked () {
     const cellIndex = this.getAttribute('cellIndex')
     if (options[cellIndex] != '' || !running) {
         return
@@ -42,39 +48,40 @@ function cellClicked() {
 }
 
 // function to update cell 
-function updateCell(cell, index) {
+function updateCell (cell, index) {
+    cell.innerHTML = currentPlayerPic
     options[index] = currentPlayer
-    cell.textContent = currentPlayer
 }
 
 // function to switch players and update statusText
-function changePlayer() {
-    if (currentPlayer === 'X') {
+function changePlayer () {
+    if (currentPlayer ==='X') {
         currentPlayer = 'O'
+        currentPlayerPic = wheelImg
     } else {
         currentPlayer = 'X'
+        currentPlayerPic = braceImg
     }
     statusText.textContent = `It is ${currentPlayer}'s turn`
 }
 
 // function to check if win conditions are met, announce winner or switch player if game still active
-function checkWinner() {
-    let roundWon = false
+function checkWinner () {
+    roundWon = false
     for (let winCondition in winConditions) {
         const condition = winConditions[winCondition]
         const cellA = options[condition[0]]
         const cellB = options[condition[1]]
         const cellC = options[condition[2]]
 
-        if (cellA == '' || cellB == '' || cellC == '') {
+        if (cellA === '' || cellB === '' || cellC === '') {
             continue
         }
         if (cellA == cellB && cellB == cellC) {
             roundWon = true
             break
         }
-    }
-    if (roundWon) {
+    } if (roundWon) {
         running = false
         statusText.textContent = `${currentPlayer} wins!`
     } else if (!options.includes('')) {
@@ -84,16 +91,14 @@ function checkWinner() {
         changePlayer()
     }
 
-
 }
 
 // function clear baord using restartBtn
-function restartGame() {
-    options = ['', '', '', '', '', '', '', '', '',]
-    currentPlayer = 'X'
-    statusText.textContent = `It is ${currentPlayer}'s turn`
+function restartGame () {
     running = true
+    options = ['', '', '', '', '', '', '', '', '', ]
+    currentPlayer = 'X'
+    currentPlayerPic = braceImg
+    statusText.textContent = `It is ${currentPlayer}'s turn`
     cells.forEach(cell => cell.textContent = '')
-
 }
-

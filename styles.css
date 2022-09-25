@@ -3,9 +3,10 @@
     
 }
 
+
 body {
-    display: flex;
-    justify-content: center;
+    margin: auto auto;
+    zoom: 75%
 }
 
 .bg {
@@ -34,8 +35,6 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: .25fr 1fr 0.1fr;
     row-gap: 30px;
-    margin: 0;
-
 }
 
 .heading {
@@ -84,19 +83,23 @@ body {
 .blue-cruiser {
     grid-column: 3 / 4;
     grid-row: 2 / 3;
-    margin: auto;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: auto;
 }
 
 .orange-cruiser {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
-    margin: auto;
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: 0px;
 }
 
 #restartBtn {
     grid-column: 2 / 3;
     width: 30%;
-    margin: 8px auto 30px auto;
+    margin: 10px auto 30px auto;
     background-image: url(images/tyre.png);
     background-repeat: no-repeat;
     background-position: 50% 50%;
@@ -140,3 +143,4 @@ body {
     text-shadow: 0 0 5px beige;
 
 }
+

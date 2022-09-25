@@ -1,47 +1,59 @@
-# Tic Tac Toe
 
-Your Tic Tac Toe app must:
+WHEELS AND BRACES
 
-- Render a game in the browser
+GAME FEATURES: 
 
-- Switch turns between X and O (or whichever markers you select)
+- 2 player naughts and crosses 
+- restart functionality
+- win / draw / player's turn announcement
+- cool 60 series Toyota Landcruiser theme
+- hover effect on game cells and restart button
+
+ORIGINAL WIREFRAME LAYOUT: 
 
 
-- Visually display which side won or show a draw if neither player wins
+![](https://file%2B.vscode-resource.vscode-cdn.net/Users/Tr/Documents/General%20Assembly/tictactoe/images/WireFrame.png?version%3D1664146932812)
 
+TECHNOLOGIES USED: 
 
-- Use JavaScript for DOM manipulation
-
-- Include separate HTML / CSS / JavaScript files
-
-- Be deployed to GitHub Pages where the rest of the world can access it
-
-- Use semantic markup (as much as possible) for HTML and CSS
+- HTML
+- CSS
+- JAVASCRIPT
 
 FUNCTIONS LIST
 
 - initialiseGame
-    - sets gameStart to true
-    - loops through all 9 squares adding an EventListener with parameters of 'click' and the alterSquare function
-    - adds event listener to restart button with parameters 'click' and the restartGame function
-    - updates the text that displays whose turn it is
+    - Sets gameStart to true
+    - Loops through all 9 squares adding an EventListener with parameters of 'click' and the alterSquare function
+    - Adds event listener to restart button with parameters 'click' and the restartGame function
+    - Updates the text that displays whose turn it is
 
 - cellClicked
-    - defines the cellIndex variable, which accesses the cellIndex attribute in the HTML file
-    - if statement checks if the squares are blank or of the game is not running and does nothing if so. 
-    - alterSquare function is then called with paramters this and cellIndex
-    - checkWinner function also called
+    - Defines the cellIndex variable, which accesses the cellIndex attribute in the HTML file
+    - If statement checks if the squares are blank or of the game is not running and does nothing if so. 
+    - AlterSquare function is then called with paramters this and cellIndex
+    - CheckWinner function also called
 
 - updateCell
-    - function parameters cell and index (to be filled with 'this'[the cell that has been clicked] and 'cellIndex' by above function[clickedCell])
-    - takes options and the index that was inputted as a parameter (whichever cellIndex was clicked), sets the value to 'currentPlayer'. This changes the options[index] from a blank string to the string stored in the currentPlayer variable.
-    - accesses the textContent from the cell and alters it to match the string stored in the currentPlayer variable.
+    - Function parameters cell and index (to be filled with 'this'[the cell that has been clicked] and 'cellIndex' by above function[clickedCell])
+    - Takes options and the index that was inputted as a parameter (whichever cellIndex was clicked), sets the value to 'currentPlayer'. This changes the options[index] from a blank string to the string stored in the currentPlayer variable.
+    - Accesses the textContent from the cell and alters it to match the string stored in the currentPlayer variable.
 
 - changePlayer
-    - if statement checks if current player is equal to 'X'. If so, it changes currentPlayer to 'O'. If current player was not 'X', player changes to 'X'.
-    - statusText gets updated to currentPlayer textContent
+    - If statement checks whether current player is equal to 'X'. If so, it changes currentPlayer to 'O'. If current player was not 'X', player changes to 'X'.
+    - StatusText gets updated to currentPlayer textContent
 
 - checkWinner
-    - variables are defined for 
+    - roundWon is defined as false
+    - For loop defines variables for each windcondition in winconditions and each relevent win condition. Winning combinations are checked with if statements. 
+    - If a winning combination is found, the loop is broken and roundwon is set to true, stopping the game. Otherwise, the game continues switching between each player.
+    - If a winning combination is not found and all squares are no longer empty (!options.inclues('')), the game ends in a draw.
 
 - restartGame
+    - All significant variables are returned to their original state, running is set to true, and each cell has its text content replaced with the blank options matching those in the options array.
+
+FUTURE IMPROVEMENTS (coming soon hopefully)
+
+    - mobile responsive
+    - audio even though it's annoying
+    - score counter

@@ -6,38 +6,61 @@
 body {
     display: flex;
     justify-content: center;
-    background-image: url(images/parch4.webp);
-    background-repeat: no-repeat;
-    background: cover;
-
 }
+
+.bg {
+    min-height: 100%;
+    min-width: 1024px;
+      
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+      
+    /* Set up positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: -1;
+}
+
+
 
 
 .container {
     display: grid;
-    justify-content: center;
+    align-content: center;
     text-align: center;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: .25fr 1fr 0.1fr;
+    row-gap: 30px;
+    margin: 0;
+
 }
 
 .heading {
-    grid-column: 2 / 3;
+    grid-column: 1 / 4;
     grid-row: 1 / 2;
-    font-size: 40px;
+    
+}
+
+.logo {
+    margin: 50px auto;
+    width: 800px;
+    margin-bottom: 100px;
+
 }
 
 
 
 .grid-div {
-    width: 800px;
-    height: 800px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 170px 170px 170px;
+    grid-template-rows: 170px 170px 170px;
     grid-column: 2 / 3;
     grid-row: 2 / 3;
-    grid-gap: 15px;
+    grid-gap: 15px; 
+    margin: auto;
 }
 
 .cell {
@@ -47,6 +70,7 @@ body {
     cursor: pointer;
     display: flex;
     justify-content: center;
+    box-shadow: 5px 5px 8px 1px black;
 
     
 }
@@ -58,26 +82,61 @@ body {
 
 
 .blue-cruiser {
-    grid-column: 2 / 4;
-    grid-row: 1 / 3;
-    margin-top: 70px;
-    margin-left: 30%;
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+    margin: auto;
 }
 
 .orange-cruiser {
-    grid-column: 1 / 3;
-    grid-row: 1 / 2;
-    margin-top: 70px;
-    margin-left: 30%;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    margin: auto;
 }
 
 #restartBtn {
     grid-column: 2 / 3;
+    width: 30%;
+    margin: 8px auto 30px auto;
+    background-image: url(images/tyre.png);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+
+    height: 68px;
+    width: 185px;
+    border: none;
+    border-radius: 15px;
+    font-size: 30px;
+    font-weight: 500;
+    font-family: "Rubik Dirt";
+    color: beige;
+    text-shadow: 0 0 20px black;
+    box-shadow: 10px 10px 8px 1px rgb(50, 50, 50);
+    
+
+   
+}
+
+#restartBtn span {
+    display: none;
+}
+
+#restartBtn:hover {
+    background-image: url(images/tyre-big.png);
+    height: 75px;
+    width: 200px;
+    font-size: 35px;
+    
+
 }
 
 #statusText {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
     align-self: end;
-    font-size: 35px;
+    font-size: 45px;
+    font-family: "Rubik Dirt";
+    font-style: italic;
+    color: black;
+    text-shadow: 0 0 5px beige;
+
 }

@@ -1,6 +1,8 @@
 
 WHEELS AND BRACES
 
+![](https://i.imgur.com/GlCzjK1.png)
+
 GAME FEATURES: 
 
 - 2 player naughts and crosses 
@@ -12,7 +14,7 @@ GAME FEATURES:
 ORIGINAL WIREFRAME LAYOUT: 
 
 
-![](https://file%2B.vscode-resource.vscode-cdn.net/Users/Tr/Documents/General%20Assembly/tictactoe/images/WireFrame.png?version%3D1664146932812)
+![](https://i.imgur.com/lQfvEa7.png)
 
 TECHNOLOGIES USED: 
 
